@@ -2,6 +2,8 @@
 A very small and minimal website built using Go. 
 Purpose: Building the smallest possible docker image sized website with (almost) static web page.
 
+view.html -> This is a template which gets replaced at runtime whenever the URL is hit, Populates dates in table.
+
 # Learning Sources
 GoLang tutorial: https://go.dev/doc/articles/wiki/
 Deploying Docker application using DockerFile https://semaphoreci.com/community/tutorials/how-to-deploy-a-go-web-application-with-docker
