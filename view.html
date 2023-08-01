@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" type="text/css" href="/resources/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/resources/skeleton.css" />
+</head>
+
+<body>
+    <div class="section hero">
+        <div class="container">
+            <div class="row">
+                <div class="one-half column">
+                    <h2 class="hero-heading">{{.Title}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section values">
+        <div class="container">
+            <table class="u-full-width">
+                <caption>Displays hours logged on a given date</caption>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Hours Logged</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range .PageData}}
+                    <tr>
+                        <td>{{.Date}}</td>
+                        <td>{{.Description}}</td>
+                        <td>{{.RandomNumber}}</td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
