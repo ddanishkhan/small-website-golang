@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"html/template"
 	"log"
@@ -90,6 +91,13 @@ func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.Handl
 		m := validPath.FindStringSubmatch(r.URL.Path)
 		if m == nil {
 			log.Println("FindStringSubmatch failed for path", r.URL.Path)
+			resp := make(map[string]string)
+			resp["message"] = "only Alphanumerics allowed after view in URL"
+			jsonResp, err := json.Marshal(resp)
+			if err != nil {
+				log.Fatalf("Error happened in JSON marshal. Err: %s", err)
+			}
+			w.Write(jsonResp)
 			http.NotFound(w, r)
 			return
 		}

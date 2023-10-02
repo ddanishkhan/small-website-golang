@@ -17,7 +17,7 @@ For reducing the size of the docker image: https://klotzandrew.com/blog/smallest
 `docker build -t small-website-golang:latest .`  
 `docker run --rm -p 9000:9000 --name go-docker-app small-website-golang:latest`
 
-URL: localhost:9000/view/demo-title  
-`demo-title` can be replaced as required to print a different heading.
+URL: localhost:9000/view/demoTitle
+`demoTitle` can be replaced as required to print a different heading.
 
 # Result: Small website of size ~10MB
